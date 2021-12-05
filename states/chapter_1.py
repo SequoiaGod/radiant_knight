@@ -87,14 +87,17 @@ class Cpt1:
             if self.npc_collision :
                 if keys[pygame.K_a] :
                     self.judge = 1
-                    print(npc.name)
+
+
 
         pass
 
     def draw_chat_board(self,judge,surface):
+
         if judge :
             surface.blit(self.chat.img, self.chat.rect)
-            surface.blit(self.chat.mes1, (50, 650))
+            #surface.blit(self.chat_role.chat_board.mes1, (50, 650))
+
 
     def update_position(self):
 
