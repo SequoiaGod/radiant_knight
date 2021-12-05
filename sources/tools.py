@@ -2,30 +2,53 @@ import pygame
 from sources import default
 
 class Game :
-    def __init__(self):
+    def __init__(self,state_dict,state):
         pygame.init()
         screen = pygame.display.set_mode((default.SCREEN_WIDTH, default.SCREEN_HEIGHT))
         self.key = pygame.key.get_pressed()
         self.screen = pygame.display.get_surface()
         self.clock = pygame.time.Clock()
+        self.state_dict = state_dict
+        self.state = self.state_dict[state]
         # self.image = pygame.image.load('./data/map/chapter_1.png')
         # self.screen.blit(self.image,(0,0))
         # pygame.display.flip()
 
-    def run(self,state):
+    def update_state(self):
+        if self.state.finish:
+            self.next_state = self.state.next
+            self.state.finish = False
+            self.state = self.state_dict[self.next_state]
+        self.state.update(self.screen,self.key)
+
+
+
+    def run(self):
         while True :
             for event in pygame.event.get() :
                 if event.type == pygame.QUIT :
                     exit()
 
-                elif event.type == pygame.KEYUP:
+                if self.state.next == 'load':
 
+                    if event.type == pygame.MOUSEBUTTONDOWN:
+                        self.key = pygame.mouse.get_pressed()
+                    elif event.type == pygame.MOUSEBUTTONUP:
+                        self.key = pygame.mouse.get_pressed()
+                        print(self.key)
+                        print(pygame.mouse.get_pos())
+
+                else :
                     self.key = pygame.key.get_pressed()
-                    pass
-                elif event.type == pygame.KEYDOWN:
-                        self.key = pygame.key.get_pressed()
+                    if event.type == pygame.KEYUP:
 
-            state.update(self.screen,self.key)
+                        self.key = pygame.key.get_pressed()
+                        pass
+                    elif event.type == pygame.KEYDOWN:
+                            self.key = pygame.key.get_pressed()
+
+            self.update_state()
+            #state.update(self.screen,self.key)
             pygame.display.flip()
             self.clock.tick(60)
 

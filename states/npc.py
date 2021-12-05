@@ -3,8 +3,9 @@ from sources import tools,default
 
 
 class NPC(pygame.sprite.Sprite):
-    def __init__(self,info):
+    def __init__(self,name,info):
         pygame.sprite.Sprite.__init__(self)
+        self.name = name
         self.info = info
         self.npc_image(self.info)
 
