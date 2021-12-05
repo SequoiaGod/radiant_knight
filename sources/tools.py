@@ -62,14 +62,12 @@ def capture(path,x,y,width,hight,color,real_width,real_heigh) :
     img = pygame.transform.scale(img,(real_width,real_heigh))
     return img
 
-def trans_pixis(list) :
+def trans_pixis(list,scale_x,scale_y) :
     for item in list:
-        item['x'] = int(item['x'] * default.CPT1_PIXIS_X)
-        item['y'] = int(item['y'] * default.CPT1_PIXIX_Y)
-        item['width'] = int(item['width'] * default.CPT1_PIXIS_X)
-        item['height'] = int(item['height'] * default.CPT1_PIXIX_Y)
-
-
+        item['x'] = int(item['x'] * scale_x)
+        item['y'] = int(item['y'] * scale_y)
+        item['width'] = int(item['width'] * scale_x)
+        item['height'] = int(item['height'] * scale_y)
 
 
 

@@ -1,5 +1,5 @@
 import pygame
-from sources import tools
+from sources import tools,default
 
 
 class Role(pygame.sprite.Sprite):
@@ -17,6 +17,7 @@ class Role(pygame.sprite.Sprite):
         self.up_structure = []
         self.down_structure = []
         self.flag = 0
+        self.stop_structure =[]
         self.current_structure = []
         self.img_rect = [( 3, 0, 38, 48),
                          (53,0,38,48),
@@ -44,9 +45,10 @@ class Role(pygame.sprite.Sprite):
             elif self.flag //3 ==3 :
                 self.up_structure.append(tools.capture('./data/roles/knight/2.png', *rect,(0,0,0), 48, 48))
             self.flag +=1
-        self.current_structure.append(self.up_structure[1])
-        self.current_structure.append(self.up_structure[1])
-        self.current_structure.append(self.up_structure[1])
+        self.stop_structure.append(self.up_structure[1])
+        self.stop_structure.append(self.up_structure[1])
+        self.stop_structure.append(self.up_structure[1])
+        self.current_structure = self.stop_structure
         self.structure.append(tools.capture('./data/roles/knight/2.png', 3, 0, 38, 48,(0,0,0), 48, 48))
         self.role_index = 0
         self.role_image = self.structure[self.role_index]

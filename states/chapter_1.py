@@ -13,7 +13,7 @@ class Cpt1:
         self.finish = False
         self.next = 'cpt2'
         self.cpt1_map = load_js.load_map('./states/chapter1.json')  # [{"x": 293, "y": 379, "width": 211, "height": 43}]
-        tools.trans_pixis(self.cpt1_map)
+        tools.trans_pixis(self.cpt1_map, default.CPT1_PIXIS_X, default.CPT1_PIXIS_Y)
         self.setup_goods()
 
         self.setup_npc()
@@ -24,17 +24,29 @@ class Cpt1:
 
 
     def Cpt1_background(self):
+        '''
+        set up the background of the chapter_1
+        :return:
+        '''
         self.image = pygame.image.load('./data/map/chapter_1new.png')
         self.image = pygame.transform.scale(self.image,(default.SCREEN_WIDTH,default.SCREEN_HEIGHT))
 
         pass
     def setup_goods(self):
+        '''
+        set up all the group of sprite
+        :return:
+        '''
         self.cpt1_group = pygame.sprite.Group()
         for item in self.cpt1_map :
             self.cpt1_group.add(goods.Goods(item['x'],item['y'],item['width'],item['height']))
         print(self.cpt1_group)
 
     def setup_npc(self):
+        '''
+        set up all the npc in the chapter_1
+        :return:
+        '''
         self.soldier1 = npc.NPC("soldier1",default.info[0])
         self.soldier2 = npc.NPC("soldier2",default.info[0])
         self.prince = npc.NPC("prince",default.info[1])
@@ -54,6 +66,10 @@ class Cpt1:
 
 
     def setup_role(self):
+        '''
+        set up the hero in the chapter_1
+        :return:
+        '''
         self.role = roles.Role()
         self.role.rect.x = 390
         self.role.rect.y = 625
@@ -62,12 +78,6 @@ class Cpt1:
 
         pass
 
-    def update(self, surface,keys):
-        self.role.update(keys)
-        self.find_talk(keys)
-        self.update_position()
-
-        self.draw(surface)
 
 
 
@@ -93,9 +103,15 @@ class Cpt1:
         self.role.rect.y += self.role.y_vel
 
         self.y_collide()
-        # print(self.role.rect)
+        if (self.role.rect.x>330 and self.role.rect.x<450) and self.role.rect.y> 730 :
+            self.finish = True
+        #print(self.role.rect)
 
     def x_collide(self):
+        '''
+        judge whether there is  collision in the x_axis. if yes, do something
+        :return:
+        '''
         self.goods_collision = pygame.sprite.spritecollideany(self.role,self.cpt1_group)
 
         if self.goods_collision :
@@ -107,6 +123,10 @@ class Cpt1:
 
 
     def y_collide(self):
+        '''
+        judge whether there is  collision in the x_axis. if yes, do somethi
+        :return:
+        '''
         self.goods_collision = pygame.sprite.spritecollideany(self.role, self.cpt1_group)
         if self.goods_collision:
             if self.role.rect.bottom < self.goods_collision.rect.bottom:
@@ -115,6 +135,18 @@ class Cpt1:
                 self.role.rect.top = self.goods_collision.rect.bottom
             self.role.y_vel = 0
 
+    def update(self, surface,keys):
+        '''
+        update all the element which is changed
+        :param surface: the main window
+        :param keys: from keyboard or mouse
+        :return:
+        '''
+        self.role.update(keys)
+        self.find_talk(keys)
+        self.update_position()
+
+        self.draw(surface)
 
     def draw(self,surface):
         surface.blit(self.image, (0, 0))
