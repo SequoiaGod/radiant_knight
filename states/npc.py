@@ -8,7 +8,7 @@ class NPC(pygame.sprite.Sprite):
         self.name = name
         self.info = info
         self.cpt1_mes = load_js.load_map('./states/cpt_1_mes.json')
-        self.chat_mes = self.cpt1_mes[self.name][0]
+        self.chat_mes = self.cpt1_mes[self.name]
 
         print(self.chat_mes)
         self.npc_image(self.info)

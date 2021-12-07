@@ -9,13 +9,16 @@ class Cpt1:
     def __init__(self):
         self.Cpt1_background()
         self.setup_role()
-        self.judge = 0
+        self.judge = 0 # judge the chat_board
+        self.num_mes = 0
+        self.mes_trigger = False
+
         self.finish = False
         self.next = 'cpt2'
         self.cpt1_map = load_js.load_map('./states/chapter1.json')  # [{"x": 293, "y": 379, "width": 211, "height": 43}]
         tools.trans_pixis(self.cpt1_map, default.CPT1_PIXIS_X, default.CPT1_PIXIS_Y)
         self.setup_goods()
-
+        self.chat_npc = 0
         self.setup_npc()
         pygame.mixer.music.load('./data/sounds/cpt1.mp3')
         pygame.mixer.music.play(1,100)
@@ -40,7 +43,7 @@ class Cpt1:
         self.cpt1_group = pygame.sprite.Group()
         for item in self.cpt1_map :
             self.cpt1_group.add(goods.Goods(item['x'],item['y'],item['width'],item['height']))
-        print(self.cpt1_group)
+        #print(self.cpt1_group)
 
     def setup_npc(self):
         '''
@@ -61,8 +64,7 @@ class Cpt1:
         self.prince.rect.x = 620
         self.prince.rect.y = 401
 
-        self.chat.rect.x = 0
-        self.chat.rect.y = 599
+
 
 
     def setup_role(self):
@@ -86,17 +88,43 @@ class Cpt1:
             self.npc_collision = pygame.sprite.collide_rect(self.role,npc)
             if self.npc_collision :
                 if keys[pygame.K_a] :
+
                     self.judge = 1
 
 
+                    self.chat_npc = npc
 
-        pass
 
-    def draw_chat_board(self,judge,surface):
+
+
+    def draw_chat_board(self,judge,surface,keys):
 
         if judge :
-            surface.blit(self.chat.img, self.chat.rect)
-            #surface.blit(self.chat_role.chat_board.mes1, (50, 650))
+
+            self.chat.print_mes(self.chat_npc.chat_mes[self.num_mes],surface)
+            #print(len(self.chat_npc.chat_mes))
+
+
+            if len(self.chat_npc.chat_mes) == (self.num_mes + 1):
+                if keys[pygame.K_SPACE] :
+                    self.num_mes = 0
+                    self.judge = 0
+                    self.mes_trigger = False
+                    return
+
+            if len(self.chat_npc.chat_mes) > (self.num_mes):
+                if keys[pygame.K_SPACE]:
+                    self.mes_trigger = True
+                if keys[pygame.K_SPACE] == False and self.mes_trigger == True :
+
+                    self.num_mes += 1
+                    self.mes_trigger = False
+
+
+
+
+
+
 
 
     def update_position(self):
@@ -139,19 +167,21 @@ class Cpt1:
             self.role.y_vel = 0
 
     def update(self, surface,keys):
+        #print(keys[pygame.K_SPACE])
         '''
         update all the element which is changed
         :param surface: the main window
         :param keys: from keyboard or mouse
         :return:
         '''
-        self.role.update(keys)
+        if self.judge != 1:
+            self.role.update(keys)
         self.find_talk(keys)
         self.update_position()
 
-        self.draw(surface)
+        self.draw(surface,keys)
 
-    def draw(self,surface):
+    def draw(self,surface,keys):
         surface.blit(self.image, (0, 0))
         surface.blit(self.soldier1.image,self.soldier1.rect)
         surface.blit(self.soldier2.image,self.soldier2.rect)
@@ -161,6 +191,6 @@ class Cpt1:
 
 
         surface.blit(self.role.role_image,self.role.rect)
-        self.draw_chat_board(self.judge,surface)
+        self.draw_chat_board(self.judge,surface,keys)
 
 
