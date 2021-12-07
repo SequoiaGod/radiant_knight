@@ -14,6 +14,7 @@ class Cpt1:
         self.mes_trigger = False
 
         self.finish = False
+        self.cpt1_end = False
         self.next = 'cpt2'
         self.cpt1_map = load_js.load_map('./states/chapter1.json')  # [{"x": 293, "y": 379, "width": 211, "height": 43}]
         tools.trans_pixis(self.cpt1_map, default.CPT1_PIXIS_X, default.CPT1_PIXIS_Y)
@@ -50,9 +51,9 @@ class Cpt1:
         set up all the npc in the chapter_1
         :return:
         '''
-        self.soldier1 = npc.NPC("soldier1",default.info[0])
-        self.soldier2 = npc.NPC("soldier2",default.info[0])
-        self.prince = npc.NPC("prince",default.info[1])
+        self.soldier1 = npc.NPC("soldier1",default.info[0],default.HUMAN_PICTURE[0])
+        self.soldier2 = npc.NPC("soldier2",default.info[0],default.HUMAN_PICTURE[0])
+        self.prince = npc.NPC("prince",default.info[1],default.HUMAN_PICTURE[1])
         self.npc_list = [self.soldier1,self.soldier2,self.prince]
         self.chat = chat_board.Chat()
         self.soldier1.rect.x = 335
@@ -102,10 +103,14 @@ class Cpt1:
         if judge :
 
             self.chat.print_mes(self.chat_npc.chat_mes[self.num_mes],surface)
+            surface.blit(self.chat_npc.npc_pit,(default.HUMAN_PICT_WIDTH,default.HUMAN_PICT_HEIGHT))
             #print(len(self.chat_npc.chat_mes))
 
 
             if len(self.chat_npc.chat_mes) == (self.num_mes + 1):
+                #print(self.chat_npc.name)
+                if self.chat_npc.name =="prince" :
+                    self.cpt1_end = True
                 if keys[pygame.K_SPACE] :
                     self.num_mes = 0
                     self.judge = 0
@@ -135,7 +140,8 @@ class Cpt1:
 
         self.y_collide()
         if (self.role.rect.x>330 and self.role.rect.x<450) and self.role.rect.y> 730 :
-            self.finish = True
+            if self.cpt1_end :
+                self.finish = True
         #print(self.role.rect)
 
     def x_collide(self):
@@ -179,13 +185,19 @@ class Cpt1:
         self.find_talk(keys)
         self.update_position()
 
+
+
+        self.soldier1.update()
+        self.soldier2.update()
+        self.prince.update()
+
         self.draw(surface,keys)
 
     def draw(self,surface,keys):
         surface.blit(self.image, (0, 0))
-        surface.blit(self.soldier1.image,self.soldier1.rect)
-        surface.blit(self.soldier2.image,self.soldier2.rect)
-        surface.blit(self.prince.image,self.prince.rect)
+        surface.blit(self.soldier1.role_image,self.soldier1.rect)
+        surface.blit(self.soldier2.role_image,self.soldier2.rect)
+        surface.blit(self.prince.role_image,self.prince.rect)
 
 
 

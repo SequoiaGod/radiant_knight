@@ -1,5 +1,5 @@
 import pygame
-from sources import tools
+from sources import tools,default
 class Load :
     def __init__(self):
         self.finish = False
@@ -9,7 +9,7 @@ class Load :
         self.set_background()
 
     def set_background(self):
-        self.image = tools.capture('./data/menu/load.png',0,0,800,611,(0,0,0),900,800)
+        self.image = tools.capture('./data/menu/load.png',0,0,800,611,(0,0,0),default.SCREEN_WIDTH,default.SCREEN_HEIGHT)
         pass
 
     def update(self,surface,keys):

@@ -1,5 +1,5 @@
 import pygame
-from sources import tools
+from sources import tools,default
 from states import chapter_1,menu_set,load_window,chapter_2,chapter_3,chapter_4
 
 def main() :
@@ -8,6 +8,7 @@ def main() :
     :return:
     '''
     # state_dict stores all of state. such as chapter1 and start menu.
+    default.load_picture()
     state_dict = {'menu': menu_set.Menu(),
                   'load': load_window.Load(),
                   'cpt1': chapter_1.Cpt1(),

@@ -34,16 +34,16 @@ class Role(pygame.sprite.Sprite):
         ]
         for rect in self.img_rect :
             if self.flag //3 == 0 :
-                self.down_structure.append(tools.capture('./data/roles/knight/2.png', *rect,(0,0,0), 48, 48))
+                self.down_structure.append(tools.capture('./data/roles/knight/2.png', *rect,(0,0,0), default.HERO_SIZE, default.HERO_SIZE))
 
             elif self.flag //3 ==1 :
-                self.left_structure.append(tools.capture('./data/roles/knight/2.png', *rect,(0,0,0), 48, 48))
+                self.left_structure.append(tools.capture('./data/roles/knight/2.png', *rect,(0,0,0), default.HERO_SIZE, default.HERO_SIZE))
 
             elif self.flag //3 ==2 :
-                self.right_structure.append(tools.capture('./data/roles/knight/2.png', *rect,(0,0,0), 48, 48))
+                self.right_structure.append(tools.capture('./data/roles/knight/2.png', *rect,(0,0,0), default.HERO_SIZE, default.HERO_SIZE))
 
             elif self.flag //3 ==3 :
-                self.up_structure.append(tools.capture('./data/roles/knight/2.png', *rect,(0,0,0), 48, 48))
+                self.up_structure.append(tools.capture('./data/roles/knight/2.png', *rect,(0,0,0), default.HERO_SIZE, default.HERO_SIZE))
             self.flag +=1
         self.stop_structure.append(self.up_structure[1])
         self.stop_structure.append(self.up_structure[1])
