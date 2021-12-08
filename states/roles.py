@@ -67,20 +67,20 @@ class Role(pygame.sprite.Sprite):
         self.time = pygame.time.get_ticks()
 
         if keys[pygame.K_LEFT]:
-            self.x_vel = -5
+            self.x_vel = -default.HERO_SPEED
             self.y_vel = 0
             self.current_structure = self.left_structure
         if keys[pygame.K_UP]:
             self.x_vel = 0
-            self.y_vel = -5
+            self.y_vel = -default.HERO_SPEED
             self.current_structure = self.up_structure
         if keys[pygame.K_DOWN]:
             self.x_vel = 0
-            self.y_vel = 5
+            self.y_vel = default.HERO_SPEED
             self.current_structure = self.down_structure
 
         if keys[pygame.K_RIGHT]:
-            self.x_vel = 5
+            self.x_vel = default.HERO_SPEED
             self.y_vel = 0
             self.current_structure = self.right_structure
 

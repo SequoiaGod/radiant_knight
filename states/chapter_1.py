@@ -56,14 +56,14 @@ class Cpt1:
         self.prince = npc.NPC("prince",default.info[1],default.HUMAN_PICTURE[1])
         self.npc_list = [self.soldier1,self.soldier2,self.prince]
         self.chat = chat_board.Chat()
-        self.soldier1.rect.x = 335
-        self.soldier1.rect.y = 515
+        self.soldier1.rect.x = 377
+        self.soldier1.rect.y = 376
 
-        self.soldier2.rect.x = 460
-        self.soldier2.rect.y = 515
+        self.soldier2.rect.x = 634
+        self.soldier2.rect.y = 376
 
-        self.prince.rect.x = 620
-        self.prince.rect.y = 401
+        self.prince.rect.x = 505
+        self.prince.rect.y = 320
 
 
 
@@ -139,10 +139,10 @@ class Cpt1:
         self.role.rect.y += self.role.y_vel
 
         self.y_collide()
-        if (self.role.rect.x>330 and self.role.rect.x<450) and self.role.rect.y> 730 :
+        if (self.role.rect.x>500 and self.role.rect.x<540) and self.role.rect.y> 660 :
             if self.cpt1_end :
                 self.finish = True
-        #print(self.role.rect)
+        print(self.role.rect)
 
     def x_collide(self):
         '''
