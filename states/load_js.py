@@ -6,7 +6,7 @@ chapter1 = [{"x": 293, "y": 379, "width": 211, "height": 43}]
 #     json.dump(chapter1,f)
 
 def load_map(path):
-    with open(path, 'r') as f:
+    with open(path, 'r',encoding='UTF-8') as f:
         cp1 = json.load(f)
     return cp1
 

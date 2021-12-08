@@ -7,9 +7,10 @@ class NPC(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         self.name = name
         self.info = info
+        self.attri = "npc"  # distinguish npc and item
         self.npc_pit = npc_pit # this is npc profile picture
         self.npc_image(self.info)
-        self.cpt1_mes = load_js.load_map('./states/cpt_1_mes.json')
+        self.cpt1_mes = load_js.load_map('./states/chat_mes.json')
         self.chat_mes = self.cpt1_mes[self.name]
         self.pre_time = 0
         print(self.chat_mes)
