@@ -3,11 +3,12 @@ from sources import tools,default
 
 
 class Role(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self,hero_pit):
         pygame.sprite.Sprite.__init__(self)
         self.role_img()
         self.role_velocity()
         self.time_tools()
+        self.hero_pit = hero_pit
 
 
     def role_img(self):

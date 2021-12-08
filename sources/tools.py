@@ -15,6 +15,10 @@ class Game :
         # pygame.display.flip()
 
     def update_state(self):
+        '''
+        change chapter
+        :return:
+        '''
         if self.state.finish:
             self.next_state = self.state.next
             self.state.finish = False
@@ -62,6 +66,13 @@ def capture(path,x,y,width,hight,color,real_width,real_heigh) :
     img = pygame.transform.scale(img,(real_width,real_heigh))
     return img
 
+def capture2(path,x,y,width,hight,real_width,real_heigh) :
+    pict = pygame.image.load(path)
+    img = pygame.Surface((width,hight))
+    img.blit(pict,(0,0),(x,y,width,hight))
+    #img.set_colorkey(color)
+    img = pygame.transform.scale(img,(real_width,real_heigh))
+    return img
 def trans_pixis(list,scale_x,scale_y) :
     for item in list:
         item['x'] = int(item['x'] * scale_x)

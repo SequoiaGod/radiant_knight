@@ -32,7 +32,7 @@ class Cpt1:
         set up the background of the chapter_1
         :return:
         '''
-        self.image = pygame.image.load('./data/map/chapter_1new.png')
+        self.image = pygame.image.load('./data/map/chapter_1.png')
         self.image = pygame.transform.scale(self.image,(default.SCREEN_WIDTH,default.SCREEN_HEIGHT))
 
         pass
@@ -73,9 +73,9 @@ class Cpt1:
         set up the hero in the chapter_1
         :return:
         '''
-        self.role = roles.Role()
-        self.role.rect.x = 390
-        self.role.rect.y = 625
+        self.role = roles.Role(default.HUMAN_PICTURE[2])
+        self.role.rect.x = 504
+        self.role.rect.y = 649
 
     def Cpt1_play(self):
 
@@ -101,9 +101,14 @@ class Cpt1:
     def draw_chat_board(self,judge,surface,keys):
 
         if judge :
-
-            self.chat.print_mes(self.chat_npc.chat_mes[self.num_mes],surface)
-            surface.blit(self.chat_npc.npc_pit,(default.HUMAN_PICT_WIDTH,default.HUMAN_PICT_HEIGHT))
+            for key,value in self.chat_npc.chat_mes[self.num_mes].items():
+                #670
+                if key == 'Warrior':
+                    default.CHAT_START_Y = 670
+                self.chat.print_mes(self.chat_npc.chat_mes[self.num_mes][key],surface)
+                default.CHAT_START_Y = 570
+            surface.blit(self.chat_npc.npc_pit,(default.HUMAN_PICT_WIDTH,default.HUMAN_PICT_HEIGHT)) # npc
+            surface.blit(self.role.hero_pit,(default.HERO_PICT_WIDTH,default.HERO_PICT_HEIGHT)) #hero
             #print(len(self.chat_npc.chat_mes))
 
 
@@ -139,7 +144,7 @@ class Cpt1:
         self.role.rect.y += self.role.y_vel
 
         self.y_collide()
-        if (self.role.rect.x>500 and self.role.rect.x<540) and self.role.rect.y> 660 :
+        if (self.role.rect.x>500 and self.role.rect.x<540) and self.role.rect.y> 660 : # new chapter judgement
             if self.cpt1_end :
                 self.finish = True
         print(self.role.rect)
