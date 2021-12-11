@@ -28,6 +28,13 @@ info = [[{'path': './data/roles/guard/2.png', 'location': (53, 0, 37, 48), 'colo
          {'path': './data/roles/mage/2.png', 'location': (3, 96, 37, 48), 'color': (0, 0, 0), 'width': HERO_SIZE,
           'height': HERO_SIZE},
          {'path': './data/roles/mage/2.png', 'location': (101, 96, 37, 48), 'color': (0, 0, 0), 'width': HERO_SIZE,
+          'height': HERO_SIZE}],
+
+        [{'path': './data/roles/Devil_king/2.png', 'location': (53, 0, 37, 48), 'color': (0, 0, 0), 'width': HERO_SIZE,
+          'height': HERO_SIZE},
+         {'path': './data/roles/Devil_king/2.png', 'location': (3, 0, 37, 48), 'color': (0, 0, 0), 'width': HERO_SIZE,
+          'height': HERO_SIZE},
+         {'path': './data/roles/Devil_king/2.png', 'location': (101, 0, 37, 48), 'color': (0, 0, 0), 'width': HERO_SIZE,
           'height': HERO_SIZE}]
         ]
 
@@ -59,6 +66,7 @@ def load_picture():
     HUMAN_PICTURE.append(tools.capture('./data/roles/prince/1.png', 0, 0, 144, 144, (0, 0, 0), pict_size, pict_size))
     HUMAN_PICTURE.append(tools.capture('./data/roles/knight/1.png', 0, 0, 144, 144, (0, 0, 0), pict_size, pict_size))
     HUMAN_PICTURE.append(tools.capture('./data/roles/mage/1.png', 0, 0, 144, 144, (0, 0, 0), pict_size, pict_size))
+    HUMAN_PICTURE.append(tools.capture('./data/roles/Devil_king/1.png', 0, 0, 144, 144, (0, 0, 0), pict_size, pict_size))
     ITEM_LIST.append(tools.capture2('./data/item/letter.png', 110, 76, 1190, 787, 800, 530))
     ITEM_LIST.append(tools.capture2('./data/item/stone.png', 0, 0, 1250, 717, 800, 460))
     ITEM_LIST.append(tools.capture2('./data/item/letter3.png', 0, 0, 800, 535, 800, 535))

@@ -1,6 +1,6 @@
 import pygame
 from sources import tools,default
-from states import chapter_1,menu_set,load_window,chapter_2,chapter_3,chapter_4,chapter_5
+from states import chapter_1,menu_set,load_window,chapter_2,chapter_3,chapter_4,chapter_5,chapter_6,gameover
 
 def main() :
     '''
@@ -16,6 +16,8 @@ def main() :
                   'cpt3': chapter_3.Cpt3(),
                   'cpt4': chapter_4.Cpt4(),
                   'cpt5': chapter_5.Cpt5(),
+                  'cpt6': chapter_6.Cpt6(),
+                  'gameover': gameover.Gameover()
                   }
     game = tools.Game(state_dict,'menu')
     # menu = menu_set.Menu()
