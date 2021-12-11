@@ -5,7 +5,7 @@ SCREEN_HEIGHT = 720  # 720
 HERO_SPEED = 3
 HERO_SIZE = 32
 HERO_SPEED = 3
-HERO_ITEM = {"pearls": 1, "sword": 1, "jewel": 0}
+HERO_ITEM = {"pearls": 0, "sword": 0, "jewel": 0}
 ITEM_LIST = []
 HUMAN_PICTURE = []
 CPT4_ITEM = []
@@ -35,7 +35,14 @@ info = [[{'path': './data/roles/guard/2.png', 'location': (53, 0, 37, 48), 'colo
          {'path': './data/roles/Devil_king/2.png', 'location': (3, 0, 37, 48), 'color': (0, 0, 0), 'width': HERO_SIZE,
           'height': HERO_SIZE},
          {'path': './data/roles/Devil_king/2.png', 'location': (101, 0, 37, 48), 'color': (0, 0, 0), 'width': HERO_SIZE,
-          'height': HERO_SIZE}]
+          'height': HERO_SIZE}],
+    [{'path': './data/roles/mage/2.png', 'location': (53,48,38,48), 'color': (0, 0, 0), 'width': HERO_SIZE,
+          'height': HERO_SIZE},
+         {'path': './data/roles/mage/2.png', 'location': (3,48,38,48), 'color': (0, 0, 0), 'width': HERO_SIZE,
+          'height': HERO_SIZE},
+         {'path': './data/roles/mage/2.png', 'location': (101, 48, 38, 48), 'color': (0, 0, 0), 'width': HERO_SIZE,
+          'height': HERO_SIZE}
+     ]
         ]
 
 CPT1_PIXIS_X = 33.75

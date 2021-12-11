@@ -3,7 +3,7 @@ from sources import tools,default
 class Load :
     def __init__(self):
         self.finish = False
-        self.next = 'cpt4'
+        self.next = 'cpt1'
 
         self.time = 0
         self.set_background()
