@@ -16,12 +16,10 @@ class Cpt5:
         self.judge = 0 # judge the chat_board
         self.num_mes = 0
         self.mes_trigger = False
-
         self.finish = False
         self.cpt1_end = False
         self.next = 'cpt6'
         self.chat_sound = pygame.mixer.Sound('./data/sounds/chat.mp3')
-        self.chat_sound_start = True
         self.cpt5_map = load_js.load_map('./states/chapter5.json')  # [{"x": 293, "y": 379, "width": 211, "height": 43}]
         tools.trans_pixis(self.cpt5_map, default.CPT1_PIXIS_X, default.CPT1_PIXIS_Y)
         self.setup_goods()
@@ -78,9 +76,17 @@ class Cpt5:
                 if keys[pygame.K_a] :
 
                     self.judge = 1
-
-
+                    default.chat_sound_start = True
                     self.chat_npc = npc
+
+        if (self.role.rect.x>856 and self.role.rect.x <896) and (self.role.rect.y >130 and self.role.rect.y <140):
+            if keys[pygame.K_a]:
+                if default.piano_judge == False:
+                    pygame.mixer.music.stop()
+                    pygame.mixer.music.unload()
+                    pygame.mixer.music.load('./data/sounds/pianomusic.mp3')
+                    pygame.mixer.music.play(-1)
+                    default.piano_judge = True
 
 
 
@@ -90,9 +96,6 @@ class Cpt5:
     def draw_chat_board(self,judge,surface,keys):
 
         if judge :
-            if self.chat_sound_start :
-                #self.chat_sound.play(1)
-                self.chat_sound_start = False
             for key,value in self.chat_npc.chat_mes[self.num_mes].items():
                 #670
                 if key == 'Warrior':
@@ -122,6 +125,7 @@ class Cpt5:
 
                     self.num_mes += 1
                     self.mes_trigger = False
+
 
 
 

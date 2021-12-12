@@ -123,6 +123,7 @@ class Cpt4:
         if (self.role.rect.x > 429 and self.role.rect.x <442) and (self.role.rect.y>523 and self.role.rect.y < 538): # gray_tile
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.gray_tile = True
                 self.role.rect.x = 810
                 self.role.rect.y = 259
@@ -130,6 +131,7 @@ class Cpt4:
         if (self.role.rect.x > 796 and self.role.rect.x <828) and (self.role.rect.y>280 and self.role.rect.y < 300): #gray_tile
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.gray_tile = True
                 self.role.rect.x = 399
                 self.role.rect.y = 535
@@ -137,6 +139,7 @@ class Cpt4:
         if (self.role.rect.x > 32 and self.role.rect.x <54) and (self.role.rect.y>427 and self.role.rect.y < 450): # stair
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.stair = True
                 self.role.rect.x = 879
                 self.role.rect.y = 442
@@ -144,12 +147,14 @@ class Cpt4:
         if (self.role.rect.x > 834 and self.role.rect.x <855) and (self.role.rect.y>427 and self.role.rect.y < 450): # stair2
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.stair = True
                 self.role.rect.x = 69
                 self.role.rect.y = 442
         if (self.role.rect.x > 32 and self.role.rect.x <50) and (self.role.rect.y>151 and self.role.rect.y < 190): # yellow_tile
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.yellow_tile = True
                 self.role.rect.x = 675
                 self.role.rect.y = 85
@@ -157,6 +162,7 @@ class Cpt4:
         if (self.role.rect.x > 663 and self.role.rect.x <690) and (self.role.rect.y>97 and self.role.rect.y < 127): # yellow_tile
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.yellow_tile = True
                 self.role.rect.x = 33
                 self.role.rect.y = 211
@@ -164,23 +170,27 @@ class Cpt4:
         if (self.role.rect.x > 30 and self.role.rect.x <52) and (self.role.rect.y>520 and self.role.rect.y < 538): # letter
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.letter_judge = True
 
         if (self.role.rect.x > 798 and self.role.rect.x <825) and (self.role.rect.y>230 and self.role.rect.y < 243): # satan
             if keys[pygame.K_a]:
                 if self.chat_with_satan:
                     self.judge = True
+                    default.chat_sound_start = True
                     self.satan_judge = True
 
         if (self.role.rect.x > 533 and self.role.rect.x < 555) and (self.role.rect.y > 73 and self.role.rect.y < 89):
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.door_judge = True
 
         self.jewel_collision = pygame.sprite.spritecollideany(self.role, self.item_group)  # jewel
         if self.jewel_collision:
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.speak = True
                 self.chat_npc = self.chat_npc_list[3]
                 default.HERO_ITEM["jewel"] = default.HERO_ITEM["jewel"] + 1
@@ -190,6 +200,7 @@ class Cpt4:
         if self.hoe_collision :
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.speak = True
                 self.chat_npc = self.chat_npc_list[5]
                 self.get_hoe = True
@@ -199,9 +210,6 @@ class Cpt4:
 
     def draw_items(self, judge, surface, keys):
         if judge:
-            if self.chat_sound_start :
-                #self.chat_sound.play(1)
-                self.chat_sound_start = False
             if self.gray_tile:
                 self.gray_tile = False
                 self.speak = True
@@ -261,7 +269,6 @@ class Cpt4:
                 # print(len(self.chat_npc.chat_mes))
 
                 if len(self.chat_npc.chat_mes) == (self.num_mes + 1):
-                    self.chat_sound_start = True
                     # print(self.chat_npc.name)
                     if  default.HERO_ITEM["jewel"] == 4:
                         if (self.role.rect.x > 533 and self.role.rect.x < 555) and (self.role.rect.y > 73 and self.role.rect.y < 89):
@@ -403,6 +410,7 @@ class Cpt4:
     def update(self,surface,keys):
         if self.judge != 1:
             self.role.update(keys)
+        tools.play_chatsound(default.chat_sound_start,self.chat_sound)
         self.update_position()
         self.find_talk(keys)
         self.draw(surface,keys)

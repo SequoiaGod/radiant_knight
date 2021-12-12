@@ -106,6 +106,12 @@ def trans_pixis(list,scale_x,scale_y) :
         item['width'] = int(item['width'] * scale_x)
         item['height'] = int(item['height'] * scale_y)
 
+def play_chatsound(soundjudge,chatsound):
+    if soundjudge:
+        chatsound.stop()
+        chatsound.play(1, 3000)
+        default.chat_sound_start = False
+
 
 
 

@@ -15,7 +15,6 @@ class Cpt1:
         self.mes_trigger = False
         self.set_music = True
         self.chat_sound = pygame.mixer.Sound('./data/sounds/chat.mp3')
-        self.chat_sound_start = True
         self.finish = False
         self.cpt1_end = False
 
@@ -95,7 +94,7 @@ class Cpt1:
                 if keys[pygame.K_a] :
 
                     self.judge = 1
-
+                    default.chat_sound_start = True
 
                     self.chat_npc = npc
 
@@ -106,9 +105,7 @@ class Cpt1:
 
 
         if judge :
-            if self.chat_sound_start :
-                #self.chat_sound.play(1)
-                self.chat_sound_start = False
+
             for key,value in self.chat_npc.chat_mes[self.num_mes].items():
                 #670
                 if key == 'Warrior':
@@ -127,7 +124,7 @@ class Cpt1:
                 if keys[pygame.K_SPACE] :
                     self.num_mes = 0
                     self.judge = 0
-                    self.chat_sound_start = True
+                    #self.chat_sound_start = True
                     self.mes_trigger = False
                     return
 
@@ -204,6 +201,7 @@ class Cpt1:
         self.soldier1.update()
         self.soldier2.update()
         self.prince.update()
+        tools.play_chatsound(default.chat_sound_start,self.chat_sound)
         if self.set_music:
             self.set_music = False
             pygame.mixer.music.stop()

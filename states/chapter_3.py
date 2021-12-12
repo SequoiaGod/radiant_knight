@@ -30,7 +30,6 @@ class Cpt3 :
         self.end = False
         self.chat_npc = 0
         self.chat_sound = pygame.mixer.Sound('./data/sounds/chat.mp3')
-        self.chat_sound_start = True
 
 
         self.cpt3_map = load_js.load_map('./states/chapter3.json')  # [{"x": 293, "y": 379, "width": 211, "height": 43}]
@@ -88,36 +87,43 @@ class Cpt3 :
         if(self.role.rect.x > 900 and self.role.rect.x <918) and (self.role.rect.y > 420 and self.role.rect.y < 447):
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.mage_judge = True
         # rope judge
         if (self.role.rect.x > 525 and self.role.rect.x < 555) and (self.role.rect.y > 122 and self.role.rect.y < 137):
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.rope_judge =True
         #sword judge
         if (self.role.rect.x > 130 and self.role.rect.x < 160) and (self.role.rect.y > 148 and self.role.rect.y < 180):
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.sword_judge = True
         #letter judge
         if (self.role.rect.x > 575 and self.role.rect.x < 600) and (self.role.rect.y > 537 and self.role.rect.y < 570):
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.letter_judge =True
         #monument judge
         if (self.role.rect.x > 655 and self.role.rect.x < 700) and (self.role.rect.y > 368 and self.role.rect.y < 381):
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.monument_judge =True
         #teleport judge
         if (self.role.rect.x > 813 and self.role.rect.x < 875) and (self.role.rect.y > 135 and self.role.rect.y < 221):
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.teleport_judge = True
 
     def draw_items(self,judge,surface,keys):
         if self.sword:
-            surface.blit(self.sword_img, (129, 135))
+            if default.HERO_ITEM['sword'] != 1:
+                surface.blit(self.sword_img, (129, 135))
         else:
             pass
         if judge:
@@ -252,6 +258,7 @@ class Cpt3 :
     def update(self,surface,keys):
         if self.judge != 1:
             self.role.update(keys)
+        tools.play_chatsound(default.chat_sound_start,self.chat_sound)
         self.update_position()
         self.find_talk(keys)
         self.mage.update()

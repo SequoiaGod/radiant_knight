@@ -32,19 +32,22 @@ class Cpt6 :
         self.draw(surface)
         if self.time == 0:
             self.time = pygame.time.get_ticks()
-        if pygame.time.get_ticks() - self.time > 50000:
+        if pygame.time.get_ticks() - self.time > 35000:
 
             self.time = 0
             self.finish = True
             default.HERO_ITEM = {"pearls": 0, "sword": 0, "jewel": 0}
+            default.piano_judge = False
             main.main()
 
         if self.set_music:
             self.set_music = False
-            pygame.mixer.music.stop()
-            pygame.mixer.music.unload()
-            pygame.mixer.music.load('./data/sounds/cpt6.mp3')
-            pygame.mixer.music.play(-1)
+            if default.piano_judge == False:
+                pygame.mixer.music.stop()
+                pygame.mixer.music.unload()
+                pygame.mixer.music.load('./data/sounds/cpt6.mp3')
+                pygame.mixer.music.play(-1)
+
 
 
     def draw(self,surface):

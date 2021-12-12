@@ -21,7 +21,7 @@ def main() :
                   'cpt6': chapter_6.Cpt6(),
                   'gameover': gameover.Gameover()
                   }
-    game = tools.Game(state_dict,'menu')
+    game = tools.Game(state_dict,'cpt5')
     # menu = menu_set.Menu()
     cpt1 = chapter_1.Cpt1()
     load = load_window.Load()

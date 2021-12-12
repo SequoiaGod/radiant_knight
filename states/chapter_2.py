@@ -15,7 +15,6 @@ class Cpt2 :
         self.setup_npc()
 
         self.chat_sound = pygame.mixer.Sound('./data/sounds/chat.mp3')
-        self.chat_sound_start = True
         self.judge = False
         self.mage_judge = False
         self.num_mes = 0
@@ -82,25 +81,30 @@ class Cpt2 :
         if (self.role.rect.x > 166 and self.role.rect.x <205) and (self.role.rect.y>340 and self.role.rect.y < 370): # mage
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.mage_judge = True
         if (self.role.rect.x > 228 and self.role.rect.x < 260) and (self.role.rect.y > 100 and self.role.rect.y < 120): # slate site
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.stone_judge = True
                 default.HERO_ITEM["pearls"] = 1
         if (self.role.rect.x >550  and self.role.rect.x < 575) and (self.role.rect.y > 516 and self.role.rect.y < 538): # letter
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.letter_judge = True
         if (self.role.rect.x >798  and self.role.rect.x < 827) and (self.role.rect.y > 339 and self.role.rect.y < 360):# monument site
             if keys[pygame.K_a]:
                 self.judge = True
+                default.chat_sound_start = True
                 self.monument_judge = True
 
         if (self.role.rect.x >880  and self.role.rect.x < 941) and (self.role.rect.y > 134 and self.role.rect.y < 216):# teleprotatio n site
             if keys[pygame.K_a]:
                 #self.judge = True
                 self.judge = True
+                default.chat_sound_start = True
                 self.teleportation_judge = True
 
         pass
@@ -243,6 +247,7 @@ class Cpt2 :
     def update(self,surface,keys):
         if self.judge != 1:
             self.role.update(keys)
+        tools.play_chatsound(default.chat_sound_start,self.chat_sound)
         self.find_talk(keys)
         self.update_position()
         self.mage.update()
