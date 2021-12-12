@@ -9,8 +9,12 @@ def main() :
     '''
     # state_dict stores all of state. such as chapter1 and start menu.
     default.load_picture()
-    pygame.mixer.music.load('./data/sounds/menu.mp3')
-    pygame.mixer.music.play(-1)
+    if default.piano_judge == False:
+        pygame.mixer.music.load('./data/sounds/menu.mp3')
+        pygame.mixer.music.play(-1)
+
+    if default.piano_judge:
+        default.piano_judge = False
     state_dict = {'menu': menu_set.Menu(),
                   'load': load_window.Load(),
                   'cpt1': chapter_1.Cpt1(),
@@ -21,7 +25,7 @@ def main() :
                   'cpt6': chapter_6.Cpt6(),
                   'gameover': gameover.Gameover()
                   }
-    game = tools.Game(state_dict,'cpt5')
+    game = tools.Game(state_dict,'menu')
     # menu = menu_set.Menu()
     cpt1 = chapter_1.Cpt1()
     load = load_window.Load()

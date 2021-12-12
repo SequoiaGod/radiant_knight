@@ -112,9 +112,7 @@ class Cpt2 :
     def draw_items(self,judge,surface,keys):
 
         if judge :
-            if self.chat_sound_start :
-                #self.chat_sound.play(1)
-                self.chat_sound_start = False
+
             if self.mage_judge:
                 self.mage_judge = False
                 self.chat_npc=self.chat_npc_list[0]

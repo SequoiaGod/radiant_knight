@@ -127,9 +127,7 @@ class Cpt3 :
         else:
             pass
         if judge:
-            if self.chat_sound_start :
-                #self.chat_sound.play(1)
-                self.chat_sound_start = False
+
             #mage
             if self.mage_judge:
                 self.mage_judge = False

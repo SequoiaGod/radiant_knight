@@ -37,7 +37,7 @@ class Cpt6 :
             self.time = 0
             self.finish = True
             default.HERO_ITEM = {"pearls": 0, "sword": 0, "jewel": 0}
-            default.piano_judge = False
+            #default.piano_judge = False
             main.main()
 
         if self.set_music:
