@@ -1,0 +1,199 @@
+{
+"soldier1":
+[{"soldier1": "\"soldier\": I haven't thought that the king would become so cruel and sacrifice many people for his own longevity..."},
+ {"soldier1": "\"soldier\": Hello, warrior, your Highness is waiting for you inside."}],
+ "soldier2":
+[{"soldier2": "\"soldier\": There are increasing magic soldiers. I have no idea what to do in the future."},
+  {"soldier2": "\"soldier\": Hello, warrior, your Highness is waiting for you inside."}],
+  "prince":
+ [ {"prince": "\"Prince\": Hello, warrior, an increasing number of soldiers were becoming bad magic soldiers, "},
+   {"prince": "\"Prince\": so it is hard for my troops to resist them."},
+   {"prince": "\"Prince\": I know that you have special qualities so that you could resist being impacted by demonic energy in the previous wars, "},
+   {"prince": "\"Prince\": Therefore, I hope that you can carry out a task for us."},
+   {"Warrior": "\"Warrior\": Right. Do you have a plan?"},
+   {"Prince":"\"Prince\": Yes. I am going to organize a feint attack to cover you to enter the magic castle built by the king."},
+   {"Prince":"\"Prince\": After sneaking in, you can act depending on the situation."},
+   {"Warrior": "\"Warrior\": Depending on the situation?"},
+   {"Prince":"\"Prince\": Yes. I sent many excellent scouts to investigate the situation in the castle before. "},
+   {"Prince":"\"Prince\": However, none of them were able to return.  "},
+   {"Prince":"\"Prince\": I guess that they were assimilated by the high concentration of magic energy. "},
+   {"Prince":"\"Prince\": The castle was filled with magic energy. "},
+   {"Prince":"\"Prince\": Then the soldiers became magic soldiers. "},
+   {"Prince":"\"Prince\": According to the drawing of the magic castle left by the king, "},
+   {"Prince":"\"Prince\": I only know that there are many traps and puzzles in the magic castle. "},
+   {"Prince":"\"Prince\": I cannot give you more information about the magic castle. "},
+   {"Prince":"\"Prince\": That’s why your special quality is important. It gives me hope."},
+   {"Warrior": "\"Warrior\": Ok. I get it."},
+   {"Warrior": "\"Warrior\": Then, when will the attack happen?"},
+   {"Prince":"\"Prince\": Three days later. In addition, this is the best backpack in the entire kingdom. Hold it. I hope it will bring you good luck."},
+   {"Warrior": "\"Warrior\": Thanks. I will make good use of it."},
+   {"Warrior": "\"Warrior\": Now I am going to prepare."}
+ ],
+  "teleportation1":
+  [{"teleportation1":"\"teleportation\": .... "},
+    {"teleportation1":"\"teleportation\": You could not be teleported "}],
+  "teleportation2":
+  [{"teleportation2":"\"teleportation\": .... "},
+    {"teleportation2":"\"teleportation\": Are you ready for teleporting!!!!!!! "}],
+  "monument1":
+  [{"monument1":"\"monument\": You don't have the code, I could not help you."},
+    {"monument1":"\"monument\": you aren't allowed to use the teleportation array."},
+  {"Warrior":"\"Warrior\": I have to find the code from the map, **** !!!!!"}],
+  "monument2":
+  [{"monument2":"\"monument\": OHHHHH,you have the code!"},
+    {"monument2":"\"monument\": you can use the teleportation array now."},
+    {"monument2":"\"monument\":let me help you!!!"},
+  {"Warrior":"\"Warrior\": THANKS"}],
+ "Letter2":
+ [{"Warrior":"\"Warrior\": ......."},
+  {"Warrior":"\"Warrior\": I will remember your sacrifice, David."},
+  {"Warrior":"\"Warrior\": I will end it all and the world would be restored to its original state."}
+   ],
+  "Slate2":
+   [{"Warrior":"\"Warrior\": ......."},
+     {"Warrior":"\"Warrior\": I see. That is why even the best scouts cannot come back."},
+     {"Warrior":"\"Warrior\": With such a high concentration of magic power, they cannot insist for a long time."},
+     {"Warrior":"\"Warrior\": However, this is my best advantage. Go ahead."}
+   ],
+  "Bard-Yan Jun":
+    [ {"Bard-Yan Jun":"\"Bard-Yan Jun\": Hello, warrior."},
+      {"Warrior":"\"Warrior\": Who are you? Why are you here? What are you doing here? ? ?"},
+      {"Bard-Yan Jun":"\"Bard-Yan Jun\": Ha, I’m a bard——Yan Jun, I’m here to give you some hints."},
+      {"Bard-Yan Jun":"\"Bard-Yan Jun\": If you want to go to the next floor, "},
+      {"Bard-Yan Jun":"\"Bard-Yan Jun\": you need to tell the magic wall the password to activate the teleportation array-\"I-S-A-A-C\"."},
+      {"Warrior":"\"Warrior\": Why do I believe you?"},
+      {"Warrior":"\"Warrior\": I do not know whether you are the incarnation of the devil?"},
+      {"Bard-Yan Jun":"\"Bard-Yan Jun\": I'm just a recorder. I don't need you to believe me because you have no other choice. "},
+      {"Warrior":"\"Warrior\": I wrote down the password. I hope what you said is true."},
+      {"Bard-Yan Jun":"\"Bard-Yan Jun\": Hope you can go further, warrior. "}
+    ],
+  "Letter3":
+   [{"Warrior":"\"Warrior\": ......."},
+     {"Warrior":"\"Warrior\": Another victim. Maybe I am last person to come here."},
+     {"Warrior":"\"Warrior\": I must keep these letters so that the world has a chance to know their merits."}
+   ],
+  "row":
+   [{"Warrior":"\"Warrior\": It seems that this rope is the key to go to the statue."}
+   ],
+  "statue":
+   [{"Warrior":"\"Warrior\": This sword can resonate unexpectedly with me."},
+   {"Warrior":"\"Warrior\": It seems that it could cause a lot of damage to monsters."}
+   ],
+  "Bard——Yang Yu":
+    [
+      {"Bard——Yang Yu":"\"Bard——Yang Yu\": Hello, warrior, I am a bard-Yang Yu."},
+      {"Warrior":"\"Warrior\": Hello, your companion helped me a lot on the upper floor."},
+      {"Warrior":"\"Warrior\": Please thanked him for helping me."},
+      {"Bard——Yang Yu":"\"Bard——Yang Yu\": No problem."},
+      {"Bard——Yang Yu":"\"Bard——Yang Yu\": The transmission array password of this floor is-\"T-H-O-R-S-T-E-N\"."},
+      {"Warrior":"\"Warrior\": I'm curious about the special meaning of this password. Is it a person's name?"},
+      {"Bard——Yang Yu":"\"Bard——Yang Yu\": This is a secret ^~^. "},
+      {"Bard——Yang Yu":"\"Bard——Yang Yu\": Goodbye, warrior."},
+      {"Warrior":"\"Warrior\": weirdo......"}
+    ],
+  "Bard-Shu Rui":
+    [
+      {"Warrior":"\"Warrior\": ..."},
+      {"Warrior":"\"Warrior\": Strange team. Go collect precious stone first."}
+    ],
+  "axe":
+    [
+      {"Warrior":"\"Warrior\": ... "},
+      {"Warrior":"\"Warrior\": A sharp hoe is suitable for cutting those obstacles. "}],
+  "Satan1":
+    [
+      {"Satan1":"\"Satan\": Human, you walk in front of me. It's really beyond my expectation. You are a little special."},
+      {"Warrior":"\"Warrior\": Who are you? Can you speak through the statue?"},
+      {"Satan1":"\"Satan\": I am Satan, the king of demons. The statue is just a tool to carry my projection."},
+      {"Warrior":"\"Warrior\": The Devil King? Does it related to you that the old king become like this?"},
+      {"Satan1":"\"Satan\": Yes, I give him the power of eternal life, and he needs to continue to sacrifice mankind to me."},
+      {"Warrior":"\"Warrior\": You seem to be very honest."},
+      {"Satan1":"\"Satan\": You are a special human being.  "},
+      {"Satan1":"\"Satan\": I can also give you the power of eternal life, just like the old king."},
+      {"Satan1":"\"Satan\": Don't be anxious to refuse."},
+      {"Satan1":"\"Satan\": I can help you kill the old king and the magic soldiers so that you can go back and declare your victory to others."},
+      {"Satan1":"\"Satan\": I am very patient. I can wait until you are old and then trade with you. "},
+      {"Satan1":"\"Satan\": You can spend decades in peace."},
+      {"Warrior":"\"Warrior\": What if I refuse?"},
+      {"Satan1":"\"Satan\": It's useless. Even if you kill the old king, my projection still has the power to transform the magic soldier. "},
+      {"Satan1":"\"Satan\": You can't do anything."},
+      {"Warrior":"\"Warrior\": ......"},
+      {"Satan1":"\"Satan\": Have you found the pearls and sword ?"},
+      {"Warrior":"\"Warrior\": NO!"},
+      {"Satan1":"\"Satan\": sorry man, you couldn't win the battle"},
+      {"Satan1":"\"Satan\": YOU WILL DIE !!!!!!!"}
+    ],
+  "Satan2":
+    [
+      {"Satan2":"\"Satan\": Human, you walk in front of me. It's really beyond my expectation. You are a little special."},
+      {"Warrior":"\"Warrior\": Who are you? Can you speak through the statue?"},
+      {"Satan2":"\"Satan\": I am Satan, the king of demons. The statue is just a tool to carry my projection."},
+      {"Warrior":"\"Warrior\": The Devil King? Does it related to you that the old king become like this?"},
+      {"Satan2":"\"Satan\": Yes, I give him the power of eternal life, and he needs to continue to sacrifice mankind to me."},
+      {"Warrior":"\"Warrior\": You seem to be very honest."},
+      {"Satan2":"\"Satan\": You are a special human being.  "},
+      {"Satan2":"\"Satan\": I can also give you the power of eternal life, just like the old king."},
+      {"Satan2":"\"Satan\": Don't be anxious to refuse."},
+      {"Satan2":"\"Satan\": I can help you kill the old king and the magic soldiers so that you can go back and declare your victory to others."},
+      {"Satan2":"\"Satan\": I am very patient. I can wait until you are old and then trade with you. "},
+      {"Satan2":"\"Satan\": You can spend decades in peace."},
+      {"Warrior":"\"Warrior\": What if I refuse?"},
+      {"Satan2":"\"Satan\": It's useless. Even if you kill the old king, my projection still has the power to transform the magic soldier. "},
+      {"Satan2":"\"Satan\": You can't do anything."},
+      {"Warrior":"\"Warrior\": ......"},
+      {"Satan2":"\"Satan\": Have you found the pearls and sword ?"},
+      {"Warrior":"\"Warrior\": YES!"},
+      {"Satan2":"\"Satan\": That 's  a bad news for me "},
+      {"Satan2":"\"Satan\": How? Do you choose to agree with me, go back to enjoy your \"triumphal\", or give up longevity. "},
+      {"Satan2":"\"Satan\": The needless struggle, I believe you can do right..."},
+      {"Warrior":"\"Warrior\": You talk too much, Satan! "},
+      {"Satan2":"\"Satan\": How could you destroy my statue! "},
+      {"Satan2":"\"Satan\": I will come back again, and you will eventually die! "},
+      {"Warrior":"\"Warrior\": Naturally there will be others stopping you. "},
+      {"Warrior":"\"Warrior\": Don't underestimate the power of human beings, demons! "},
+      {"Warrior":"\"Warrior\": I get a jewel from satan "}],
+  "Door":
+    [
+      {"Warrior":"\"Warrior\": Eventually all the precious stones were collected. "},
+      {"Warrior":"\"Warrior\": Then you can see the old king. "}
+    ],
+  "King":
+    [
+      {"King":"\"King\": What is going on. I am aging rapidly. "},
+      {"King":"\"King\": I have sacrificed many people in exchange for longevity. "},
+      {"Warrior":"\"Warrior\": Satan was expelled, old king. You no longer have the power of eternal life. "},
+      {"King":"\"King\": Impossible. How can you expel Satan. You are just a tiny human being. "},
+      {"Warrior":"\"Warrior\": You are also one of the tiny humans in your mouth, the old king. "},
+      {"King":"\"King\": It is impossible. Are you also a demon? "},
+      {"King":"\"King\": Yes, you must be a demon. "},
+      {"King":"\"King\": I can sacrifice more humans for you... "},
+      {"Warrior":"\"Warrior\": Shut up! "},
+      {"Warrior":"\"Warrior\": I have seen many nobles among human beings who are willing to sacrifice themselves for others. "},
+      {"Warrior":"\"Warrior\": However, this is not what you can understand now. You are about to die, old king. "},
+      {"King":"\"King\": You are lying. Lying. You must have a way to make me alive forever, you lie..."},
+      {"Warrior":"\"Warrior\": It seems to be over, temporarily. The next task is not easy..."}
+    ],
+  "gray_tile":
+  [{"gray_tile": "...."},
+    {"gray_tile": "you find a secret path. Let's goooooooo!!!!"}],
+  "yellow_tile":
+  [{"yellow_tile": "...."},
+    {"yellow_tile": "you find a secret path. Let's goooooooo!!!!"}],
+  "stair":
+  [{"stair": "...."},
+    {"stair": "you find a secret path. Let's goooooooo!!!!"}],
+  "jewel":
+  [{"jewel": "...."},
+    {"jewel": "you find a jewel. congratulation!!!!"}],
+
+  "hoe":
+  [{"hoe": "...."},
+    {"hoe": "you find a hoe. congratulation!!!!"}],
+  "door1":
+  [{"door1": "...."},
+    {"door1": "you haven't got 4 jewel, so you couldn't go to the next chapter"}],
+  "door2":
+  [{"door2": "...."},
+    {"door2": "congratulation! you can go to the next chapter"}]
+
+}

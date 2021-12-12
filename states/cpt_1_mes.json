@@ -1,0 +1,23 @@
+{
+"soldier1":
+[{"soldier1": "\"soldier\": I haven't thought that the king would become so cruel and sacrifice many people for his own longevity..."},
+ {"soldier1": "\"soldier\": Hello, warrior, your Highness is waiting for you inside."}],
+ "soldier2":
+[{"soldier2": "\"soldier\": There are increasing magic soldiers. I have no idea what to do in the future."},
+  {"soldier2": "\"soldier\": Hello, warrior, your Highness is waiting for you inside."}],
+  "prince":
+ [ {"prince": "\"Prince\": Hello, warrior, an increasing number of soldiers were becoming bad magic soldiers, "},
+   {"prince": "\"Prince\": so it is hard for my troops to resist them."},
+   {"prince": "\"Prince\": I know that you have special qualities so that you could resist being impacted by demonic energy in the previous wars, "},
+   {"prince": "\"Prince\": Therefore, I hope that you can carry out a task for us."},
+   {"Warrior": "\"Warrior\": Right. Do you have a plan?"},
+   {"Prince":"\"Prince\": Yes. I am going to organize a feint attack to cover you to enter the magic castle built by the king."},
+   {"Prince":"\"Prince\": After sneaking in, you can act depending on the situation."}
+ ],
+  "monument1":
+  [{"monument1": "\"mage\": hello man!" }],
+
+  "monument2":
+  [{"monument2": "\"mage\": hello man!" }]
+
+}
