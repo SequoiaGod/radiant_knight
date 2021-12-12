@@ -36,6 +36,7 @@ class Cpt6 :
 
             self.time = 0
             self.finish = True
+            default.HERO_ITEM = {"pearls": 0, "sword": 0, "jewel": 0}
             main.main()
 
         if self.set_music:

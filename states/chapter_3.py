@@ -29,6 +29,8 @@ class Cpt3 :
         self.speak = False
         self.end = False
         self.chat_npc = 0
+        self.chat_sound = pygame.mixer.Sound('./data/sounds/chat.mp3')
+        self.chat_sound_start = True
 
 
         self.cpt3_map = load_js.load_map('./states/chapter3.json')  # [{"x": 293, "y": 379, "width": 211, "height": 43}]
@@ -119,6 +121,9 @@ class Cpt3 :
         else:
             pass
         if judge:
+            if self.chat_sound_start :
+                #self.chat_sound.play(1)
+                self.chat_sound_start = False
             #mage
             if self.mage_judge:
                 self.mage_judge = False
@@ -137,9 +142,11 @@ class Cpt3 :
                     self.teleport = True
             #letter
             if self.letter_judge:
-                self.letter_judge = False
-                self.chat_npc = self.chat_npc_list[3]
-                self.speak = True
+                surface.blit(default.ITEM_LIST[3], (100, 75))
+                if keys[pygame.K_SPACE]:
+                    self.letter_judge = False
+                    self.chat_npc = self.chat_npc_list[3]
+                    self.speak = True
             #rope
             if self.rope_judge:
                 self.rope_judge = False
@@ -174,6 +181,7 @@ class Cpt3 :
                 surface.blit(self.role.hero_pit,(default.HERO_PICT_WIDTH,default.HERO_PICT_HEIGHT))
 
                 if len(self.chat_npc.chat_mes) == (self.num_mes +1):
+                    self.chat_sound_start = True
                     if self.teleport:
                         if(self.role.rect.x > 813 and self.role.rect.x < 875) and (self.role.rect.y > 135 and self.role.rect.y < 221):
                             if keys[pygame.K_SPACE]:

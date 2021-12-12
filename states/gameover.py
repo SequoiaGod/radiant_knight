@@ -27,6 +27,7 @@ class Gameover :
         if keys[pygame.K_a]:
 
             self.finish = True
+            default.HERO_ITEM = {"pearls": 0, "sword": 0, "jewel": 0}
             main.main()
 
         if self.set_music:
@@ -35,6 +36,7 @@ class Gameover :
             pygame.mixer.music.unload()
             pygame.mixer.music.load('./data/sounds/gameover.mp3')
             pygame.mixer.music.play(-1)
+
 
     def draw(self,surface):
         surface.blit(self.image,(0,0))

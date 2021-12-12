@@ -14,7 +14,8 @@ class Cpt2 :
         self.setup_role()
         self.setup_npc()
 
-
+        self.chat_sound = pygame.mixer.Sound('./data/sounds/chat.mp3')
+        self.chat_sound_start = True
         self.judge = False
         self.mage_judge = False
         self.num_mes = 0
@@ -107,6 +108,9 @@ class Cpt2 :
     def draw_items(self,judge,surface,keys):
 
         if judge :
+            if self.chat_sound_start :
+                #self.chat_sound.play(1)
+                self.chat_sound_start = False
             if self.mage_judge:
                 self.mage_judge = False
                 self.chat_npc=self.chat_npc_list[0]
@@ -148,6 +152,7 @@ class Cpt2 :
 
 
                 if len(self.chat_npc.chat_mes) == (self.num_mes + 1):
+                    self.chat_sound_start = True
                     #print(self.chat_npc.name)
                     if self.teleportation:
                         if (self.role.rect.x > 880 and self.role.rect.x < 941) and (self.role.rect.y > 134 and self.role.rect.y < 216):
@@ -161,6 +166,7 @@ class Cpt2 :
                                 return
                     if keys[pygame.K_SPACE] :
                         self.num_mes = 0
+                        self.chat_sound_start = True
                         self.judge = False
                         self.mes_trigger = False
                         self.mage_judge = False

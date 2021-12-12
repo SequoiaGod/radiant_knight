@@ -36,7 +36,8 @@ class Cpt4:
         self.door_judge = False
         self.get_satan_jewel = True
         self.chat_with_satan = True
-
+        self.chat_sound = pygame.mixer.Sound('./data/sounds/chat.mp3')
+        self.chat_sound_start = True
 
         self.cpt4_map = load_js.load_map('./states/chapter4.json')  # [{"x": 293, "y": 379, "width": 211, "height": 43}]
         tools.trans_pixis(self.cpt4_map, default.CPT1_PIXIS_X, default.CPT1_PIXIS_Y)
@@ -198,6 +199,9 @@ class Cpt4:
 
     def draw_items(self, judge, surface, keys):
         if judge:
+            if self.chat_sound_start :
+                #self.chat_sound.play(1)
+                self.chat_sound_start = False
             if self.gray_tile:
                 self.gray_tile = False
                 self.speak = True
@@ -257,6 +261,7 @@ class Cpt4:
                 # print(len(self.chat_npc.chat_mes))
 
                 if len(self.chat_npc.chat_mes) == (self.num_mes + 1):
+                    self.chat_sound_start = True
                     # print(self.chat_npc.name)
                     if  default.HERO_ITEM["jewel"] == 4:
                         if (self.role.rect.x > 533 and self.role.rect.x < 555) and (self.role.rect.y > 73 and self.role.rect.y < 89):

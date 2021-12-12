@@ -77,6 +77,7 @@ def load_picture():
     ITEM_LIST.append(tools.capture2('./data/item/letter.png', 110, 76, 1190, 787, 800, 530))
     ITEM_LIST.append(tools.capture2('./data/item/stone.png', 0, 0, 1250, 717, 800, 460))
     ITEM_LIST.append(tools.capture2('./data/item/letter3.png', 0, 0, 800, 535, 800, 535))
+    ITEM_LIST.append(tools.capture2('./data/item/letter2.png', 110, 76, 1190, 787, 800, 530))
     CPT4_ITEM.append(tools.capture('./data/goods/item.png', 0, 0, 46, 46, (0, 0, 0), CPT4_ITEM_SIZE, CPT4_ITEM_SIZE))
     CPT4_ITEM.append(tools.capture('./data/goods/item.png', 674, 0, 46, 46, (0, 0, 0), CPT4_ITEM_SIZE, CPT4_ITEM_SIZE))
     CPT4_ITEM.append(tools.capture('./data/goods/item.png', 528, 0, 46, 46, (0, 0, 0), CPT4_ITEM_SIZE, CPT4_ITEM_SIZE))
