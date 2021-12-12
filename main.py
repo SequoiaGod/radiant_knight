@@ -9,6 +9,8 @@ def main() :
     '''
     # state_dict stores all of state. such as chapter1 and start menu.
     default.load_picture()
+    pygame.mixer.music.load('./data/sounds/menu.mp3')
+    pygame.mixer.music.play(-1)
     state_dict = {'menu': menu_set.Menu(),
                   'load': load_window.Load(),
                   'cpt1': chapter_1.Cpt1(),

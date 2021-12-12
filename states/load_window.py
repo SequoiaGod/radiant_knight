@@ -2,6 +2,7 @@ import pygame
 from sources import tools,default
 class Load :
     def __init__(self):
+        self.state_name = 'load'
         self.finish = False
         self.next = 'cpt1'
 

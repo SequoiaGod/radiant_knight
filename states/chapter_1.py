@@ -7,11 +7,13 @@ class Cpt1:
         this is chapter one code
     '''
     def __init__(self):
+        self.state_name = 'cpt1'
         self.Cpt1_background()
         self.setup_role()
         self.judge = 0 # judge the chat_board
         self.num_mes = 0
         self.mes_trigger = False
+        self.set_music = True
 
         self.finish = False
         self.cpt1_end = False
@@ -21,8 +23,8 @@ class Cpt1:
         self.setup_goods()
         self.chat_npc = 0
         self.setup_npc()
-        pygame.mixer.music.load('./data/sounds/cpt1.mp3')
-        pygame.mixer.music.play(1,100)
+        # pygame.mixer.music.load('./data/sounds/cpt1.mp3')
+        # pygame.mixer.music.play(1,100)
 
 
 
@@ -195,7 +197,12 @@ class Cpt1:
         self.soldier1.update()
         self.soldier2.update()
         self.prince.update()
-
+        if self.set_music:
+            self.set_music = False
+            pygame.mixer.music.stop()
+            pygame.mixer.music.unload()
+            pygame.mixer.music.load('./data/sounds/cpt1.mp3')
+            pygame.mixer.music.play(-1)
         self.draw(surface,keys)
 
     def draw(self,surface,keys):

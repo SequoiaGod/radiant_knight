@@ -6,6 +6,7 @@ from sources import tools,default
 
 class Menu :
     def __init__(self):
+        self.state_name = 'menu'
         self.finish = False
         self.next = 'load'
         self.setup_background()
@@ -79,5 +80,6 @@ class Menu :
         surface.blit(self.control_button.image,self.control_button.rect)
         surface.blit(self.exit_button.image,self.exit_button.rect)
         self.draw_setting(surface,self.judge)
+
 
         #surface.blit(self.cursor,(280,250))
