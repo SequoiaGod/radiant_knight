@@ -102,7 +102,13 @@ class Cpt1:
 
 
     def draw_chat_board(self,judge,surface,keys):
-
+        '''
+        this function realize the interaction between hero and npc
+        :param judge:
+        :param surface:
+        :param keys:
+        :return:
+        '''
 
         if judge :
 
@@ -144,6 +150,10 @@ class Cpt1:
 
 
     def update_position(self):
+        '''
+        update the position of hero
+        :return:
+        '''
 
         self.role.rect.x += self.role.x_vel
         self.x_collide()

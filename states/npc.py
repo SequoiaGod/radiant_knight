@@ -17,6 +17,11 @@ class NPC(pygame.sprite.Sprite):
         self.npc_image(self.info)
 
     def npc_image(self,info_path):
+        '''
+        init the npc image
+        :param info_path:
+        :return:
+        '''
 
         self.structure = []
         for info in info_path :
@@ -30,6 +35,10 @@ class NPC(pygame.sprite.Sprite):
 
 
     def update(self):
+        '''
+        update the gesture of npc
+        :return:
+        '''
         self.time = pygame.time.get_ticks()
 
         if self.time - self.pre_time > 200 :

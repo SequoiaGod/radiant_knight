@@ -1,6 +1,9 @@
 import pygame
 
 class Goods(pygame.sprite.Sprite) :
+    '''
+    the class of item
+    '''
     def __init__(self,x,y,width,height):
         pygame.sprite.Sprite.__init__(self)
         # self.width = width
@@ -13,6 +16,9 @@ class Goods(pygame.sprite.Sprite) :
 
 
 class item_gooods(pygame.sprite.Sprite) :
+    '''
+    the class of item which need to be interacted with hero
+    '''
     def __init__(self,x,y,img):
         pygame.sprite.Sprite.__init__(self)
         self.image = img

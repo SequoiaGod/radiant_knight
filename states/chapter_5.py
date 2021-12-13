@@ -32,7 +32,7 @@ class Cpt5:
 
     def Cpt1_background(self):
         '''
-        set up the background of the chapter_1
+        set up the background of the chapter_5
         :return:
         '''
         self.image = pygame.image.load('./data/map/chapter_5.png')
@@ -61,7 +61,7 @@ class Cpt5:
 
     def setup_role(self):
         '''
-        set up the hero in the chapter_1
+        set up the hero in the chapter_5
         :return:
         '''
         self.role = roles.Role(default.HUMAN_PICTURE[2])
@@ -185,6 +185,12 @@ class Cpt5:
             self.role.y_vel = 0
 
     def update(self,surface,keys):
+        '''
+        update all of parameter in this chapter
+        :param surface:
+        :param keys:
+        :return:
+        '''
         if self.judge != 1:
             self.role.update(keys)
         self.find_talk(keys)

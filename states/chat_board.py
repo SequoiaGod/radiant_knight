@@ -12,6 +12,10 @@ class Chat :
 
 
     def chat_img(self):
+        '''
+        init the chat board image
+        :return:
+        '''
         self.img = tools.capture('./data/chat/chat_1.png',0,0,500,284,(0,0,0),default.SCREEN_WIDTH,200)
         self.rect = self.img.get_rect()
         self.font = pygame.font.Font("./font/word1.TTF", 18)
@@ -19,6 +23,12 @@ class Chat :
 
 
     def print_mes(self,mes,surface):
+        '''
+        draw  the words into the chat board
+        :param mes:
+        :param surface:
+        :return:
+        '''
         surface.blit(self.img, self.rect)
         self.mes1 = self.font.render(mes, True, (255, 255, 255))
         surface.blit(self.mes1, (default.CHAT_START_X , default.CHAT_START_Y))

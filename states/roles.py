@@ -12,6 +12,10 @@ class Role(pygame.sprite.Sprite):
 
 
     def role_img(self):
+        '''
+        init the hero image
+        :return:
+        '''
         self.structure = []
         self.left_structure = []
         self.right_structure = []
@@ -65,6 +69,11 @@ class Role(pygame.sprite.Sprite):
 
 
     def update(self, keys):
+        '''
+        update the speed and hero gesture
+        :param keys:
+        :return:
+        '''
         self.time = pygame.time.get_ticks()
 
         if keys[pygame.K_LEFT]:

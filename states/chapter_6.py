@@ -21,7 +21,7 @@ class Cpt6 :
 
     def Cpt6_background(self):
         '''
-        set up the background of the chapter_1
+        set up the background of the chapter_6
         :return:
         '''
         self.image = pygame.image.load('./data/map/chapter_6.png')
@@ -29,6 +29,12 @@ class Cpt6 :
 
 
     def update(self,surface,keys):
+        '''
+        update all of parameter in this chapter
+        :param surface:
+        :param keys:
+        :return:
+        '''
         self.draw(surface)
         if self.time == 0:
             self.time = pygame.time.get_ticks()

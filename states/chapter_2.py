@@ -49,6 +49,10 @@ class Cpt2 :
         print(self.cpt2_group)
 
     def setup_npc(self):
+        '''
+        init the npc who I need in this chapter
+        :return:
+        '''
         self.mage = npc.NPC("Bard-Yan Jun",default.info[2],default.HUMAN_PICTURE[3])
         self.chat = chat_board.Chat()
         self.chat_npc_list = [self.mage]
@@ -69,7 +73,7 @@ class Cpt2 :
         pass
     def setup_role(self):
         '''
-        set up the hero in the chapter_1
+        set up the hero in the chapter_2
         :return:
         '''
         self.role = roles.Role(default.HUMAN_PICTURE[2])
@@ -243,6 +247,12 @@ class Cpt2 :
                 self.role.rect.top = self.goods_collision.rect.bottom
             self.role.y_vel = 0
     def update(self,surface,keys):
+        '''
+        update all of parameter in this chapter
+        :param surface:
+        :param keys:
+        :return:
+        '''
         if self.judge != 1:
             self.role.update(keys)
         tools.play_chatsound(default.chat_sound_start,self.chat_sound)

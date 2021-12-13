@@ -54,7 +54,7 @@ class Cpt3 :
 
     def setup_role(self):
         '''
-        set up the hero in the chapter_1
+        set up the hero in the chapter_3
         :return:
         '''
         self.role = roles.Role(default.HUMAN_PICTURE[2])
@@ -63,6 +63,7 @@ class Cpt3 :
         self.role.rect.y = 569
 
     def setup_npc(self):
+
         self.mage = npc.NPC("Bard——Yang Yu",default.info[4],default.HUMAN_PICTURE[3])
         self.chat = chat_board.Chat()
         self.mage.rect.x = 985
@@ -83,6 +84,11 @@ class Cpt3 :
         pass
 
     def find_talk(self,keys):
+        '''
+        judge which item or npc need to interact with hero
+        :param keys:
+        :return:
+        '''
         # mage judge
         if(self.role.rect.x > 900 and self.role.rect.x <918) and (self.role.rect.y > 420 and self.role.rect.y < 447):
             if keys[pygame.K_a]:
@@ -98,9 +104,10 @@ class Cpt3 :
         #sword judge
         if (self.role.rect.x > 130 and self.role.rect.x < 160) and (self.role.rect.y > 148 and self.role.rect.y < 180):
             if keys[pygame.K_a]:
-                self.judge = True
-                default.chat_sound_start = True
-                self.sword_judge = True
+                if self.sword ==True:
+                    self.judge = True
+                    default.chat_sound_start = True
+                    self.sword_judge = True
         #letter judge
         if (self.role.rect.x > 575 and self.role.rect.x < 600) and (self.role.rect.y > 537 and self.role.rect.y < 570):
             if keys[pygame.K_a]:
@@ -156,7 +163,8 @@ class Cpt3 :
                 self.rope_judge = False
                 self.chat_npc =self.chat_npc_list[4]
                 self.speak = True
-                self.sword = True
+                if default.HERO_ITEM["sword"] ==0:
+                    self.sword = True
             #sword
             if self.sword_judge:
                 self.sword_judge =False
@@ -185,7 +193,6 @@ class Cpt3 :
                 surface.blit(self.role.hero_pit,(default.HERO_PICT_WIDTH,default.HERO_PICT_HEIGHT))
 
                 if len(self.chat_npc.chat_mes) == (self.num_mes +1):
-                    self.chat_sound_start = True
                     if self.teleport:
                         if(self.role.rect.x > 813 and self.role.rect.x < 875) and (self.role.rect.y > 135 and self.role.rect.y < 221):
                             if keys[pygame.K_SPACE]:
@@ -220,9 +227,7 @@ class Cpt3 :
         self.y_collide()
         # y=730
 
-        if (self.role.rect.x>500 and self.role.rect.x<540) and self.role.rect.y> 660 : # new chapter judgement
 
-            self.finish = True
 
         print(self.role.rect)
 

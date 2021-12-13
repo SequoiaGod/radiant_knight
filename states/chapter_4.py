@@ -51,7 +51,7 @@ class Cpt4:
 
     def Cpt1_background(self):
         '''
-        set up the background of the chapter_1
+        set up the background of the chapter_4
         :return:
         '''
         self.image = pygame.image.load('./data/map/chapter_4.png')
@@ -70,6 +70,10 @@ class Cpt4:
 
 
     def setup_npc(self):
+        '''
+        set up all the npc in the chapter_4
+        :return:
+        '''
         self.chat_npc_list = []
         self.chat_npc_list.append(items_interation.Item("gray_tile"))
         self.chat_npc_list.append(items_interation.Item("yellow_tile"))
@@ -89,7 +93,7 @@ class Cpt4:
 
     def setup_role(self):
         '''
-        set up the hero in the chapter_1
+        set up the hero in the chapter_4
         :return:
         '''
         self.role = roles.Role(default.HUMAN_PICTURE[2])
@@ -97,6 +101,10 @@ class Cpt4:
         self.role.rect.y = 568
 
     def setup_item(self):
+        '''
+        set up the item which need to interact with hero in this chapter
+        :return:
+        '''
         self.item_group = pygame.sprite.Group()
         self.barrier_group = pygame.sprite.Group()
         self.hoe_group = pygame.sprite.Group()
@@ -120,6 +128,11 @@ class Cpt4:
 
 
     def find_talk(self,keys):
+        '''
+        judge which item or npc need to interact with hero
+        :param keys:
+        :return:
+        '''
         if (self.role.rect.x > 429 and self.role.rect.x <442) and (self.role.rect.y>523 and self.role.rect.y < 538): # gray_tile
             if keys[pygame.K_a]:
                 self.judge = True
@@ -334,9 +347,7 @@ class Cpt4:
 
         self.y_collide()
         self.y_barrier_collide()
-        #self.jewel_collide()
-        if (self.role.rect.x>501 and self.role.rect.x<580) and self.role.rect.y> 660 :
-            self.finish = True
+
         #print(self.role.rect)
 
    # def jewel_collide(self,keys):
@@ -408,6 +419,12 @@ class Cpt4:
         pass
 
     def update(self,surface,keys):
+        '''
+        update all of parameter in this chapter
+        :param surface:
+        :param keys:
+        :return:
+        '''
         if self.judge != 1:
             self.role.update(keys)
         tools.play_chatsound(default.chat_sound_start,self.chat_sound)
